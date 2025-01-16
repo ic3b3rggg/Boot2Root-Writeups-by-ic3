@@ -2,11 +2,11 @@
 
 ## Directory enumeration with gobuster 
 ```
-gobuster dir -u "http://10.10.169.231/" -w /usr/share/wordlists/dirb/common.txt
+gobuster dir -u "http://$ip/" -w /usr/share/wordlists/dirb/common.txt
 ```
 
 I found an interesting file-path which renders a login interface-
- ```http://10.10.169.231/squirrelmail/src/login.php```
+ ```http://$ip/squirrelmail/src/login.php```
  
 ## Nmap scan
 After a simple  nmap scan we see that have the following ports open.
